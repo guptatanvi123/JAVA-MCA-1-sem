@@ -1,0 +1,56 @@
+/*(6).Create a class “Circle” with
+1) private variables x, y, and r Here x and y are coordinates of center of circle and r is a radius
+2) Define all possible constructors.
+3) Define a method – public double area() which is calculate and return area of a circle.
+4) Define a method – public double circumference() which is calculate and return perimeter of a circle.
+5) Define a method – public double diameter() which is calculate and return diameter of a circle*/
+
+class Circle {
+
+  private int x, y, r;
+
+  Circle() {
+      x = 10;
+      y = 20;
+      r = 2;
+  }
+
+  Circle(int x, int y, int r) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+  }
+
+  //area of circle calculate method
+  public double area() {
+      return Math.PI * r * r;
+  }
+
+  //perimeter of circle calculate method
+  public double circumference() {
+      return 2 * Math.PI * r;
+  }
+
+  //diameter of circle calculate method
+  public double diameter() {
+      return 2 * r;
+  }
+}
+
+public class P6 {
+
+  public static void main(String[] args) {
+      //Perameter Constructor Use
+      System.out.println("---Perameter Constructor Use---");
+      Circle c1 = new Circle(50, 100, 4);
+      //area
+      double areac = c1.area();
+      System.out.println("Area of Circle:=" + areac);
+      //perimeter
+      double perimeter = c1.circumference();
+      System.out.println("Perimeter of Circle:=" + perimeter);
+      //diameter
+      double diameterc = c1.diameter();
+      System.out.println("diameter of Circle:=" + diameterc);
+  }
+}
