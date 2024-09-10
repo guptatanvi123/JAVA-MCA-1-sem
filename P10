@@ -1,0 +1,85 @@
+/*(9).Write a java program to create an abstract class named Shape that contains two integers and abstract methods named area() and perimeter(). Provide three classes named Rectangle, Triangle and Circle such 
+that each one of the classes extends the class Shape. Each one of the classes contains all possible constructor(s) and overridden methods
+1) public double area() that calculate and return area of the given shape. And
+2) public double perimeter() that calculates and returns circumference/perimeter of the given shape.*/
+
+abstract class Shape {
+
+  protected double dimension1;
+  protected double dimension2;
+
+  public Shape(double dimension1, double dimension2) {
+      this.dimension1 = dimension1;
+      this.dimension2 = dimension2;
+  }
+
+  public abstract double area();
+  public abstract double perimeter();
+
+}
+
+class Rectangle extends Shape {
+
+  public Rectangle(double length, double width) {
+      super(length, width);
+  }
+
+  public double area() {
+      return dimension1 * dimension2;
+  }
+
+  public double perimeter() {
+      return 2 * (dimension1 + dimension2);
+  }
+}
+
+class Triangle extends Shape {
+
+  private double side3;
+
+  public Triangle(double base, double height, double side3) {
+      super(base, height);
+      this.side3 = side3;
+  }
+
+  public double area() {
+      return 0.5 * dimension1 * dimension2;
+  }
+
+  public double perimeter() {
+      return dimension1 + dimension2 + side3;
+  }
+}
+
+class Circle extends Shape {
+
+  public Circle(double radius) {
+      super(radius, 0);
+  }
+
+  public double area() {
+      return Math.PI * dimension1 * dimension1;
+  }
+
+  public double perimeter() {
+      return 2 * Math.PI * dimension1;
+  }
+}
+
+public class P9 {
+
+  public static void main(String[] args) {
+      Rectangle r = new Rectangle(5, 3);
+      Triangle t = new Triangle(4, 6, 5);
+      Circle c = new Circle(7);
+
+      System.out.println("Rectangle Area:=" + r.area());
+      System.out.println("Rectangle Perimeter:=" + r.perimeter());
+
+      System.out.println("Triangle Area:=" + t.area());
+      System.out.println("Triangle Perimeter:=" + t.perimeter());
+
+      System.out.println("Circle Area:=" + c.area());
+      System.out.println("Circle Perimeter:=" + c.perimeter());
+  }
+}
