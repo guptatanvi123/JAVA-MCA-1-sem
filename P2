@@ -1,0 +1,23 @@
+/*(2).Write a program to read five strings from command line and sort them and display.*/
+
+import java.util.*; // Importing util package
+
+public class P2 {
+    public static void main(String[] args)
+     {
+        // Print original input
+        System.out.println("Before Sorting:");
+        for(int i=0;i<args.length;i++) 
+        {
+            System.out.print(args[i]+","); // Print each arg
+        }
+
+        // Sort and print sorted output
+        System.out.println("\nAfter Sorting:");
+        Arrays.sort(args); // Sort args
+        for(int i=0;i<args.length;i++) 
+        {
+            System.out.print(args[i]+","); // Print each sorted arg
+        }
+    }
+}
